@@ -1,21 +1,21 @@
-<?php 
+<?php
 
 // $content = 'le mot "mot" est en position moteur 3, 8 et 29';
 // $seq = 'mot'; // mot recherche
 
-function search_pos_word(array $content, array $seq) 
+function search_pos_word(array $content, array $seq)
 {
     $i = 0;
 
-    foreach($content as $index => $letter) {
-        if($letter === $seq[$i]) {
+    foreach ($content as $index => $letter) {
+        if ($letter === $seq[$i]) {
             $i++;
 
-            if($i === count($seq)) return $index - count($seq) + 1;
+            if ($i === count($seq)) return $index - count($seq) + 1;
 
             continue;
         }
-        $i=0;
+        $i = 0;
     }
 }
 
@@ -28,19 +28,19 @@ class Search
     }
 }
 
-function search_pos_seq_all(string $seq, string $content) : Search
+function search_pos_seq_all(string $seq, string $content): Search
 {
     $index = 0;
     $pos = true;
     $positions = [];
     list($arraySeq, $arrayContent) = [str_split($seq), str_split($content)];
 
-    while($pos) {
-        if(!$pos) break;
+    while ($pos) {
+        if (!$pos) break;
 
-        $pos = search_pos_word(content : $arrayContent, seq : $arraySeq);
+        $pos = search_pos_word(content: $arrayContent, seq: $arraySeq);
 
-        if($pos) $positions[] = $pos + $index;
+        if ($pos) $positions[] = $pos + $index;
 
         $arrayContent = array_slice($arrayContent, $pos + strlen($seq));
         $index += $pos + strlen($seq);
@@ -62,9 +62,9 @@ function testSearch_pos_seq_all()
         assert($result->seq === 'mot');
         assert($result->pos === [3, 8, 29]);
         assert($result instanceof Search);
-        echo "✔️ les tests pour fonction search_pos_seq_all est valide.";
+        echo "✔️ les tests pour la fonction search_pos_seq_all est valide.";
     } catch (AssertionError $e) {
-        echo "❌ un test pour la fonction search_pos_seq_all a échoué.".PHP_EOL;
+        echo "❌ un test pour la fonction search_pos_seq_all a échoué." . PHP_EOL;
         echo "cause :" . $e->getMessage() . ' à la ligne ' . $e->getLine() . PHP_EOL;
     }
 }
