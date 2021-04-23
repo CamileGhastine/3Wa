@@ -1,0 +1,17 @@
+{
+    "name": "camile/button_lamp",
+    "description": "button and lamp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CamileGhastine",
+            "email": "camileghastine@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
