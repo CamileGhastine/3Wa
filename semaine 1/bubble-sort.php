@@ -1,7 +1,9 @@
 <?php
 
 $asc = function (array $tab): array {
+
     $min = +INF;
+
     foreach ($tab as $key => $number) {
         if ($number < $min) {
             $min = $number;
@@ -16,7 +18,9 @@ $asc = function (array $tab): array {
 };
 
 $desc = function (array $tab): array {
+
     $min = -INF;
+    
     foreach ($tab as $key => $number) {
         if ($number > $min) {
             $min = $number;
@@ -35,7 +39,6 @@ function bubble_sort(array $tab, callable $callback): array
     $tabSort = [];
 
     foreach ($tab as $n) {
-
         $result = $callback($tab);
         unset($tab[$result['index']]);
 

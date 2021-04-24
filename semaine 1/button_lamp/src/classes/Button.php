@@ -11,10 +11,8 @@ class Button
 
     public function switchDevice()
     {
-        $this->lamp->setStat();
+        $this->lamp->changeStat();
 
         return $this->lamp->stat();
     }
-
-
 }

@@ -6,18 +6,17 @@ class Lamp
 {
     private bool $stat = false;
 
-    public function setStat() : self
+    public function changeStat(): self
     {
         $this->stat = !$this->stat;
-        
+
         return $this;
     }
 
-    public function stat() : string
+    public function stat(): string
     {
-        if($this->stat) return "Turn on !";
+        if ($this->stat) return "Turn on !";
 
         return "Turn off !";
-    } 
-
+    }
 }
