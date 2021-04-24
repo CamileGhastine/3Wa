@@ -1,0 +1,17 @@
+{
+    "name": "camile/poo",
+    "description": "exemple",
+    "license": "MIT",     
+    "authors": [
+        {
+            "name": "CamileGhastine",
+            "email": "camileghastine@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
