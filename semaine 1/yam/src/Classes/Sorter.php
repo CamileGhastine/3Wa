@@ -31,27 +31,33 @@ class Sorter
 
     private function analyseCombinaison(array $repartition): void
     {
-
-        if (in_array(5, $repartition)) {
-            $this->countYam += 1;
-            // exit;        
-        }
-
-        if (in_array(4, $repartition)) {
-            $this->countCarre += 1;
-            // exit;
-        }
-
+        //Brelan
         if (in_array(3, $repartition)) {
             $this->countBrelan += 1;
-            // exit;
+            return;
         }
 
+        // Two paires
         $countPaire = 0;
         foreach ($repartition as $occ) {
             if ($occ === 2) $countPaire += 1;
         }
 
-        if ($countPaire === 2) $this->countTwoPaire += 1;
+        if ($countPaire === 2) {
+            $this->countTwoPaire += 1;
+            return;
+        }
+
+        // Carré
+        if (in_array(4, $repartition)) {
+            $this->countCarre += 1;
+            return;
+        }
+
+        // Yam
+        if (in_array(5, $repartition)) {
+            $this->countYam += 1;
+            return;
+        }
     }
 }
