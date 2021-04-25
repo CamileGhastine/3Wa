@@ -1,7 +1,5 @@
 <?php
 
-namespace App;
-
 use App\Classes\Button;
 use App\Classes\Lamp;
 
