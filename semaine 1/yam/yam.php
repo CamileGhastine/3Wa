@@ -13,5 +13,5 @@ $display = new Displayer;
 try {
     echo $display->display($attemps);
 } catch (TypeError) {
-    echo "Erreur  de type : \$try doit être un entier.";
+    echo "Erreur  de type : \$attemps doit être un entier.";
 }
