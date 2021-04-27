@@ -9,7 +9,7 @@ class Button
     {
     }
 
-    public function switchDevice()
+    public function switchDevice() : mixed
     {
         $this->lamp->changeStat();
 
