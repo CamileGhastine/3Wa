@@ -2,9 +2,9 @@
 
 class Queue implements ArrayAccess
 {
-    private $container = [];
+    private array $container = [];
 
-    public function push($value)
+    public function push(mixed $value) : mixed
     {
         return $this->offsetSet($value);
     }
@@ -39,17 +39,19 @@ class Queue implements ArrayAccess
         return $this;
     }
 
-    public function offsetExists($offset)
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): self
     {
         unset($this->container[$offset]);
+
+        return $this;
     }
 
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
