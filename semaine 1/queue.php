@@ -2,7 +2,7 @@
 
 class Queue
 {
-    public array $queue = [];
+    private array $queue = [];
 
     public function push($element): self
     {
@@ -11,7 +11,7 @@ class Queue
         return $this;
     }
 
-    public function pop()
+    public function pop(): mixed
     {
         $last = end($this->queue) ?: throw new ValueError("Aucun élement dans la queue !");
         
